@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">	
+		<title>Prueba GPS</title>
+		<link rel="stylesheet" type="text/css" href="Style.css">
+		<link rel="stylesheet" type="text/css" href="normalize.css">
+		<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+		
+		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+  		integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+   		crossorigin=""/>
+
+   		<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+   		integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+   		crossorigin=""></script>
+
+  		<script type="text/javascript" src="ref.js"></script>
+
+  		<link rel="stylesheet" type="text/css" href="jquery.datetimepicker.min.css">
+  		<script type="text/javascript" src="jquery.js"></script>
+  		<script type="text/javascript" src="jquery.datetimepicker.full.js"></script>
+
+	</head>
+	<body>
+	<div class="general-container">
+		<div class="sub-container">
+		<div class="sub-container1">
+
+			<div class="table-title">Información</div>
+		    <div class="table-label" class="table-item">Latitud</div>
+    		<div id="lati" class="table-item"></div>
+    
+   			<div class="table-label" class="table-item">Longitud</div>
+			<div id="long" class="table-item"></div>
+		
+    		<div class="table-label" class="table-item">Fecha</div>
+			<div id="date" class="table-item"></div>
+		
+    		<!-- <div class="table-label" class="table-item">Hora</div>
+  			<div id="hour" class="table-item"></div> -->
+
+			<input type="button" class="real_time " value=" Pulsar para: Tiempo Real" onclick="_switchtoMap1()">
+		</div>
+
+		<div class="sub-container2" id="Claseamplia">
+			
+			<!-- <button type="button" onclick="Database()" value="Iniciar codigo"></button> -->
+			<!-- <script>
+				function Database(){
+				socket.on('interval', function (output) {
+                console.log(output);
+				});
+			};
+			</script> -->
+			<div ></div>
+			<div class="Historicos-title">Historicos</div>
+			<div class="start-title">Inicio:</div>
+			
+			<input id="Start" class="start-container"  name="Start" placeholder="Fecha Inicial">
+			<input type="button" class="inputDate1"  id="inputDate1" value="Ingresar fecha inicial" onclick="_enableDate2()">
+			<script>
+				_picker1();
+			</script>
+
+			<div class="end-title">Fin:</div>
+
+			<input id="Finish" class="end-container"  name="Finish" disabled= "true" placeholder="Fecha Final">
+			<!-- <script>
+				_picker2();
+			</script> -->
+			<input type="button" id="intervalbutton" class="boton_intervalo" value="Ingresar Intervalo" onclick="_switchtoMap2()">
+			<div class="Cases-title">Información de historicos:</div>
+			<div ></div>
+			<div id="Cases" class="Cases-info"></div>
+			</div>
+
+  		</div>
+
+
+		<div id="issMap" class="Map"></div>
+		<div id="issMap2" class="Map2"></div>
+		<script>startMap();</script>		
+	</div>
+		
+	
+		<!-- </form>  -->
+
+	
+	</body>
+</html>
